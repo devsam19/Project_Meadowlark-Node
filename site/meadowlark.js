@@ -21,7 +21,7 @@ app.set('port',process.env.PORT||3000);
 
 
 //For testing
-// middleware to detect tes=1 in the query string
+// middleware to detect test=1 in the query string
 //important that it should appear before we assign any routes
 
 app.use(function(req,res,next){
@@ -50,6 +50,18 @@ app.get('/about/sam',function(req,res){
 	res.send('Hey , Im sam');
 });
 
+
+//cross page testing
+app.get('tours/hood-river',function(req,res){
+        res.render('tours/hood-river');
+});
+
+app.get('tours/request-group-rates',function(req,res){
+        res.render('tours/request-group-rates');
+});
+
+
+
 //custom 404 page
 app.use(function(req,res,next){
 	res.status(404);
@@ -62,16 +74,6 @@ app.use(function(req,res){
 	res.status(500);
 	res.render('500');
 });
-
-//cross page testing
-app.get('/hood-river',function(req,res){
-	res.render('views/tours/hood-river');
-});
-
-app.get('tours/request-group-rates',function(req,res){
-	res.render('tours/request-group-rates');
-});
-
 
 
 app.listen(app.get('port'),function(){
