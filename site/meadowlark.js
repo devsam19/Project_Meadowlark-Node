@@ -52,11 +52,11 @@ app.get('/about/sam',function(req,res){
 
 
 //cross page testing
-app.get('tours/hood-river',function(req,res){
+app.get('/tours/hood-river',function(req,res){
         res.render('tours/hood-river');
 });
 
-app.get('tours/request-group-rates',function(req,res){
+app.get('/tours/request-group-rates',function(req,res){
         res.render('tours/request-group-rates');
 });
 
